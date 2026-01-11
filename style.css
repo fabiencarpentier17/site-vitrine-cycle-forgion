@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cabin:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
 html{
     scroll-behavior: smooth;
@@ -7,7 +8,7 @@ html{
 body{
     margin: 0;  /*Marge extérieur*/
     padding: 0; /*Marge intérieur*/
-    font-family: 'Merriweather', sans-serif; /*Police pour toute la page*/
+    font-family: 'Cabin', sans-serif; /*Police pour toute la page*/
     padding-top: 80px;
 }
 
@@ -56,6 +57,8 @@ nav .onglets a{
 }
 
 nav .onglets a span {
+    display: inline-block;
+    width: 80px;
     padding-bottom: 4px;
     border-bottom: 2px solid #3A6041;
     text-align: center;
@@ -73,7 +76,7 @@ header{
 }
 
 header h1{
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Arvo', sans-serif;
     font-size: 50px;
 }
 
@@ -137,9 +140,14 @@ footer{
 }
 
 footer h1{
+    font-family: "Arvo";
     text-decoration: none;
     border-bottom: 1px solid #fff;
     margin-bottom: 10px;
+}
+
+footer h3{
+    font-size: x-large;
 }
 
 footer .contacts{
@@ -155,6 +163,17 @@ footer .contacts .lignedeuxcontact{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+footer .contacts .lignedeuxcontact .horaires .ligne-horaire {
+    display: grid;
+    grid-template-columns: 120px auto;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+footer .contacts .lignedeuxcontact .horaires .jour {
+    font-weight: 600;
 }
 
 footer .contacts .lignedeuxcontact a{
@@ -194,8 +213,31 @@ footer .contacts .lignedeuxcontact p{
 
 @media screen and (max-width: 1024px) {
 
+    nav .logo img{
+        margin-left: 1%;
+        height: 90px;
+    }
+
+    nav .onglets {
+        gap: 12px;
+        margin-right: 6%;
+    }
+
+    nav .onglets a span {
+        width: 75px;
+        font-size: 15px;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #3A6041;
+    }
+
     footer {
         padding: 30px 40px;
+    }
+
+    footer p,
+    footer a,
+    footer span {
+        font-size: 15px;
     }
 
     footer .contacts {
@@ -203,11 +245,18 @@ footer .contacts .lignedeuxcontact p{
         grid-template-columns: repeat(2, 1fr);
         gap: 20px 40px;
         max-width: 800px;
-        margin: 0 auto;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     footer .contacts .lignedeuxcontact {
         width: 100%;
+        align-items: center;
+    }
+
+    footer .contacts .lignedeuxcontact .horaires .ligne-horaire{
+        grid-template-columns: 80px auto;
+        gap: 6px;
     }
 }
 
@@ -225,22 +274,30 @@ footer .contacts .lignedeuxcontact p{
     }
 
     nav .logo img {
-        margin-bottom: 10px;
+        margin-bottom: 0px;
+        height: 50px;
     }
 
     nav .onglets{
-        margin-top: 10px;
+        margin-top: 2px;
         width: 100%;
         max-width: 400px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px 20px;
-        margin-left: 10%;
-        margin-right: 10%;
+        gap: 6px;
+        margin-left: 2%;
+        margin-right: 2%;
     }
 
     nav .onglets a {
         justify-content: center;
+    }
+
+    nav .onglets a span {
+        width: 50px;
+        font-size: 11px;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #3A6041;
     }
 
     .main .card{
@@ -261,11 +318,22 @@ footer .contacts .lignedeuxcontact p{
         padding: 30px 20px;
     }
 
+    footer p,
+    footer a,
+    footer span {
+        font-size: 13px;
+    }
+
     footer .contacts {
         grid-template-columns: 1fr;
     }
 
     footer .contacts .lignedeuxcontact {
         width: 100%;
+        align-items: baseline;
+    }
+
+    footer .contacts .lignedeuxcontact .horaires .ligne-horaire {
+        grid-template-columns: 60px auto;
     }
 }
