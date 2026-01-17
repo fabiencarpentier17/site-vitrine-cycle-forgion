@@ -348,7 +348,7 @@ footer .contacts .lignedeuxcontact p{
         max-width: 400px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 6px;
+        gap: 1%;
         margin-left: 2%;
         margin-right: 2%;
     }
