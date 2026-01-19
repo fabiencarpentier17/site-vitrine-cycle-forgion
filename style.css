@@ -82,8 +82,9 @@ a:hover {
 body{
     margin: 0;  /*Marge extérieur*/
     padding: 0; /*Marge intérieur*/
-    font-family: 'Cabin', sans-serif; /*Police pour toute la page*/
+    font-family: 'Cabin', serif; /*Police pour toute la page*/
     padding-top: 80px;
+    background-color: #000000;
 }
 
 nav{
@@ -152,13 +153,24 @@ nav .onglets a span {
 
 
 .main{
-    margin-top: 40px;
+    margin: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.main .content .card{
+.main .content .presentation {
+    color: #fff;
+    background-color: #000000;
+    margin-bottom: 0;
+}
+
+.main .content .presentation h1 {
+    font-family: "Arvo", serif;
+}
+
+.main .content .card1{
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -166,25 +178,50 @@ nav .onglets a span {
 
 }
 
-.main .content .card .left{
-    flex: 0 0 30%;
+.main .content .card2{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+.main .content .card1 .left{
+    flex: 0 0 35%;
     padding: 20px;
     background-color: black;
     color: #fff;
 }
 
-.main .content .card.right{
-    flex: 0 0 70%;
+.main .content .card1 .right{
+    flex: 0 0 65%;
 }
 
-.main .content .card .right img{
+.main .content .card1 .right img{
     width: 100%;
     height: auto;
     display: block;
 }
 
+.main .content .card2 .left{
+    flex: 0 0 65%;
+}
+
+.main .content .card2 .left img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main .content .card2 .right{
+    flex: 0 0 35%;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+}
+
 footer{
-    margin-top: 40px;
+    margin-top: 0px;
     border-top: 5px #717171;
     background-color: #000000;
     color: #fff;
@@ -192,7 +229,7 @@ footer{
 }
 
 footer h1{
-    font-family: "Arvo";
+    font-family: "Arvo", serif;
     text-decoration: none;
     border-bottom: 1px solid #fff;
     margin-bottom: 10px;
@@ -314,6 +351,11 @@ footer .contacts .lignedeuxcontact p{
 
 
 @media screen and (max-width:680px){
+    
+    body {
+        padding-top: 100px;
+    }
+    
     nav {
         flex-direction: column;
         align-items: center;
@@ -352,17 +394,31 @@ footer .contacts .lignedeuxcontact p{
         border-bottom: 2px solid #3A6041;
     }
 
-    .main .card{
-        margin: 10px;
+    .main .content .card1,
+    .main .content .card2 {
+        display: flex !important;
+        flex-direction: column;
+        margin: 5px;
+        width: 100%;
     }
 
-    .main .content .card .right img{
+    .main .content .card1 .left,
+    .main .content .card2 .right {
+        order: -1;
+        padding: 10px;
+    }
+
+    .main .content .card1 .right,
+    .main .content .card2 .left {
+        order: 2;
+        margin-top: 10px;
+    }
+
+    .main .content .card1 .right img,
+    .main .content .card2 .left img {
         height: 200px;
         width: 100%;
-        margin-top: 0px;
-    }
-
-    .main .content .card{
+        object-fit: cover;
         display: block;
     }
 
