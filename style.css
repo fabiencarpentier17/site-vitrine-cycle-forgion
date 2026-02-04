@@ -83,8 +83,8 @@ body{
     margin: 0;  /*Marge extérieur*/
     padding: 0; /*Marge intérieur*/
     font-family: 'Cabin', serif; /*Police pour toute la page*/
-    padding-top: 80px;
-    background-color: #000000;
+    padding-top: 90px;
+    background-color: #EEEFD5;
 }
 
 nav{
@@ -161,8 +161,8 @@ nav .onglets a span {
 }
 
 .main .content .presentation {
-    color: #fff;
-    background-color: #000000;
+    color: #3A6041;
+    background-color: #EEEFD5;
     margin-bottom: 0;
 }
 
@@ -170,54 +170,90 @@ nav .onglets a span {
     font-family: "Arvo", serif;
 }
 
-.main .content .card1{
+.main .content .card1,
+.main .content .card2 {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin-bottom: 20px;
-
-}
-
-.main .content .card2{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin-bottom: 20px;
-
+    align-items: center;
+    height: 100%;
+    min-height: 500px;
 }
 
 .main .content .card1 .left{
-    flex: 0 0 35%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
-    background-color: black;
-    color: #fff;
 }
 
-.main .content .card1 .right{
-    flex: 0 0 65%;
+.main .content .card1 .left h1 {
+    color: #3A6041;
+    text-align: center;
+    font-family: "Arvo", serif;
 }
 
 .main .content .card1 .right img{
     width: 100%;
-    height: auto;
-    display: block;
-}
-
-.main .content .card2 .left{
-    flex: 0 0 65%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .main .content .card2 .left img{
     width: 100%;
-    height: auto;
-    display: block;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .main .content .card2 .right{
-    flex: 0 0 35%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
-    background-color: black;
-    color: #fff;
+    color: #3A6041;
+}
+
+.main .content .card2 .right h1 {
+    color: #3A6041;
+    text-align: center;
+    font-family: "Arvo", serif;
+}
+
+.main .content .card2 .right .location-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 10px;
+    border: 2px solid #3A6041;
+    border-radius: 10px;
+    background-color: #EEEFD5;
+    overflow: hidden;
+}
+
+.main .content .card2 .right .location-grid .location-col {
+    padding: 12px 8px;
+    background-color: #EEEFD5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    min-height: 35px;
+    border-bottom: 1px solid #3A6041;
+}
+
+
+.main .content .card2 .right .location-grid .location-col.header {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main .content .card2 .right .location-grid .location-col.footer {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: none;
 }
 
 footer{
