@@ -80,6 +80,7 @@ a:hover {
 }
 
 body{
+    overflow-x: hidden;
     margin: 0;  /*Marge extérieur*/
     padding: 0; /*Marge intérieur*/
     font-family: 'Cabin', serif; /*Police pour toute la page*/
@@ -92,8 +93,8 @@ nav{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 5px solid #3A6041; /*couleur ligne top*/
-    background-color: #EEEFD5;
+    border-bottom: 5px solid #EEEFD5; 
+    background-color: #3A6041;
 
     position: fixed;
     top: 0;
@@ -128,15 +129,16 @@ nav .onglets a{
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: #3A6041;
+    color: #fff;
 }
 
 nav .onglets a span {
     display: inline-block;
     width: 80px;
     padding-bottom: 4px;
-    border-bottom: 2px solid #3A6041;
+    border-bottom: 2px solid #fff;
     text-align: center;
+    font-weight: bold;
 }
 
 .header-flex {
@@ -147,10 +149,6 @@ nav .onglets a span {
     margin: 0;
     padding: 0;
 }
-
-
-
-
 
 .main{
     margin: 0;
@@ -230,36 +228,92 @@ nav .onglets a span {
     border-radius: 10px;
     background-color: #EEEFD5;
     overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .main .content .card2 .right .location-grid .location-col {
-    padding: 12px 8px;
+    padding: 5px;
     background-color: #EEEFD5;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 11px;
     min-height: 35px;
     border-bottom: 1px solid #3A6041;
+    line-height: 1.2;
 }
 
+.main .content .card2 .right .location-grid .location-col .info-tooltip {
+    position: relative;
+}
+
+.main .content .card2 .right .location-grid .location-col .info-tooltip i {
+    font-size: 13px;
+    margin-left: 3px;
+    cursor: help;
+    vertical-align: middle;
+}
+
+.main .content .card2 .right .location-grid .location-col .info-tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 105%;
+    transform: translateY(-50%) translateX(0%);
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    line-height: 1.3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    pointer-events: none;
+}
+
+.main .content .card2 .right .location-grid .location-col .info-tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: -8px;
+    border-width: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #333 transparent transparent;
+}
+
+.main .content .card2 .right .location-grid .location-col .info-tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
 
 .main .content .card2 .right .location-grid .location-col.header {
     font-size: 12px;
     font-weight: bold;
+    line-height: 1.1;
 }
 
 .main .content .card2 .right .location-grid .location-col.footer {
     font-size: 12px;
     font-weight: bold;
     border-bottom: none;
+    line-height: 1.1;
 }
 
 footer{
     margin-top: 0px;
     border-top: 5px #717171;
-    background-color: #000000;
+    background-color: #3A6041;
     color: #fff;
     padding: 30px 60px;
 }
@@ -316,19 +370,19 @@ footer .contacts .lignedeuxcontact a span{
 }
 
 footer .contacts .lignedeuxcontact a.instagram i{
-    color: #E1306C;
+    color: #fff;
 }
 
 footer .contacts .lignedeuxcontact a.facebook i{
-    color: #1877F2;
+    color: #fff;
 }
 
 footer .contacts .lignedeuxcontact a[href^="tel:"] i{
-    color: #2dcd60
+    color: #fff
 }
 
 footer .contacts .lignedeuxcontact a[href^="mailto:"] i{
-    color: #ffd700
+    color: #fff
 }
 
 footer .contacts .lignedeuxcontact p{
@@ -427,7 +481,7 @@ footer .contacts .lignedeuxcontact p{
         width: 50px;
         font-size: 11px;
         padding-bottom: 2px;
-        border-bottom: 2px solid #3A6041;
+        border-bottom: 2px solid #fff;
     }
 
     .main .content .card1,
