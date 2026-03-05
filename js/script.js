@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
     preloader.style.transition = 'opacity 0.4s ease';
     preloader.style.opacity = '0';
 
-    this.setTimeout(() => {
+    setTimeout(() => {
         preloader.style.display = 'none';
     }, 400);
-})
+});
